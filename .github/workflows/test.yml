@@ -51,5 +51,12 @@ jobs:
         env:
             GOOS: windows
             GOARCH: amd64
-      - name: Check env
-        run: echo ${GOOS}
+
+  checkenv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set env
+        env:
+          TESTENV: woop
+      - name: print env
+        run: echo ${TESTENV}
