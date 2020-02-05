@@ -40,14 +40,14 @@ jobs:
       - name: Build 32-bit
         run: |
           go build -o windows-32
-          ./windows-32.exe
+          windows-32.exe
         env:
             GOOS: windows
             GOARCH: 386
       - name: Build 64-bit
         run: |
           go build -o windows-64
-          ./windows-64.exe
+          windows-64.exe
         env:
             GOOS: windows
             GOARCH: amd64 
