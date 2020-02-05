@@ -17,16 +17,18 @@ jobs:
     name: Compress
     runs-on: windows-latest
     steps:
-      - name: Compress
-        run: 7z a example.zip action-a README.md
-      - uses: actions/upload-artifact@v1
-        with:
-          name: releases
-          path: example.zip
-      - name: Compress 2
-        run: 7z a example2.zip README.md
-      - uses: actions/upload-artifact@v1
-        with:
-          name: releases
-          path: example2.zip
+        - name: Check out code into the Go module directory
+          uses: actions/checkout@v2
+        - name: Compress
+          run: 7z a example.zip action-a README.md
+        - uses: actions/upload-artifact@v1
+          with:
+            name: releases
+            path: example.zip
+        - name: Compress 2
+          run: 7z a example2.zip README.md
+        - uses: actions/upload-artifact@v1
+          with:
+            name: releases
+            path: example2.zip
     
