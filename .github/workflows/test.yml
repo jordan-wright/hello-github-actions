@@ -50,4 +50,6 @@ jobs:
           windows-64.exe
         env:
             GOOS: windows
-            GOARCH: amd64 
+            GOARCH: amd64
+      - name: Check env
+        run: echo ${GOOS}
