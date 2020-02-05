@@ -39,9 +39,15 @@ jobs:
         uses: actions/checkout@v2
       - name: Build 32-bit
         run: |
-          GOOS=windows GOARCH=386 go build -o windows-32
+          go build -o windows-32
           ./windows-32.exe
+        env:
+            GOOS: windows
+            GOARCH: 386
       - name: Build 64-bit
         run: |
-          GOOS=windows GOARCH=amd64 go build -o windows-64
+          go build -o windows-64
           ./windows-64.exe
+        env:
+            GOOS: windows
+            GOARCH: amd64 
